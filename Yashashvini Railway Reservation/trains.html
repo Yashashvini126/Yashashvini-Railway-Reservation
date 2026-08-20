@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Trains | Yashashvini Railway</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ================= TRAIN IMAGES ================= */
+
+        .train-images-section {
+            padding: 50px 5%;
+        }
+
+        .train-images-section .section-heading {
+            text-align: center;
+        }
+
+        .train-images-container {
+            width: 100%;
+            display: flex;
+            gap: 25px;
+        }
+
+        .train-image-box {
+            width: 50%;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .train-image-box img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .train-image-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .train-image-content h3 {
+            color: #163b68;
+            margin: 0 0 12px;
+            font-size: 24px;
+        }
+
+        .train-image-content p {
+            line-height: 1.7;
+            margin: 0;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .train-images-container {
+                flex-direction: column;
+            }
+
+            .train-image-box {
+                width: 100%;
+            }
+
+            .train-image-box img {
+                height: 280px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <span class="logo-icon">🚆</span>
+
+            <div>
+
+                <h2>YASHASHVINI</h2>
+
+                <small>Railway Reservation</small>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="trains.html" class="active">
+                Trains
+            </a>
+
+            <a href="reservation.html">
+                Reservation
+            </a>
+
+            <a href="stations.html">
+                Stations
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= PAGE BANNER ================= -->
+
+    <section class="page-banner">
+
+        <div class="page-banner-content">
+
+            <p>OUR TRAINS</p>
+
+            <h1>
+                Yashashvini
+            </h1>
+
+            <h2>
+                Railway Reservation Information System
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TRAIN SECTION ================= -->
+
+    <section class="train-images-section">
+
+        <div class="section-heading">
+
+            <h2>
+                Available Trains
+            </h2>
+
+        </div>
+
+
+        <div class="train-images-container">
+
+
+            <!-- LEFT IMAGE -->
+
+            <div class="train-image-box">
+
+                <img
+                    src="images/rail.jpg"
+                    alt="Indian Railway Train">
+
+                <div class="train-image-content">
+
+                    <h3>
+                        Indian Express
+                    </h3>
+
+                    <p>
+                        Indian Express provides comfortable and
+                        convenient railway services for passengers
+                        travelling to different destinations.
+                    </p>
+
+                    <p>
+                        Comfortable journey • Multiple destinations
+                        • Daily railway service • Easy reservation
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="train-image-box">
+
+                <img
+                    src="images/train2.jpg"
+                    alt="Express Railway Train">
+
+                <div class="train-image-content">
+
+                    <h3>
+                        Superfast Express
+                    </h3>
+
+                    <p>
+                        Superfast Express offers faster railway
+                        services and helps passengers reach their
+                        destinations conveniently.
+                    </p>
+
+                    <p>
+                        Fast travel • Comfortable coaches
+                        • Multiple routes • Easy booking facility
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= TRAIN INFORMATION ================= -->
+
+    <section class="welcome-section">
+
+        <div class="welcome-content">
+
+            <p class="section-label">
+                YASHASHVINI RAILWAY
+            </p>
+
+            <h2>
+                Explore Trains For Your Journey
+            </h2>
+
+            <p>
+                Explore different trains and choose the service
+                that best suits your journey. Yashashvini Railway
+                provides useful train information including routes,
+                destinations, travel options and reservation
+                facilities to help passengers plan their journey
+                with ease and comfort.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <h3>
+                    🚆 YASHASHVINI
+                </h3>
+
+                <p>
+                    Railway Reservation Information System
+                </p>
+
+                <p>
+                    Connecting Passengers With The Right Train.
+                </p>
+
+            </div>
+
+
+            <!-- Train Links -->
+
+            <div class="footer-column">
+
+                <h4>
+                    Train Links
+                </h4>
+
+                <a href="trains.html">
+                    Available Trains
+                </a>
+
+                <a href="reservation.html">
+                    Book Train Ticket
+                </a>
+
+                <a href="stations.html">
+                    Train Stations
+                </a>
+
+                <a href="services.html">
+                    Train Services
+                </a>
+
+            </div>
+
+
+            <!-- Train Information -->
+
+            <div class="footer-column">
+
+                <h4>
+                    Train Information
+                </h4>
+
+                <a href="trains.html">
+                    Express Trains
+                </a>
+
+                <a href="trains.html">
+                    Superfast Trains
+                </a>
+
+                <a href="stations.html">
+                    Train Routes
+                </a>
+
+                <a href="reservation.html">
+                    Reservation Details
+                </a>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-column">
+
+                <h4>
+                    Train Enquiries
+                </h4>
+
+                <p>
+                    📧 trains@yashashvini.com
+                </p>
+
+                <p>
+                    📞 +91 90000 00000
+                </p>
+
+                <p>
+                    🚆 Train Information Support
+                </p>
+
+                <p>
+                    📍 India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Yashashvini Railway Reservation
+                Information System. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
