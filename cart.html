@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart | Yashashvini Electronic Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="site-header">
+
+
+    <!-- LOGO -->
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ⚡
+        </div>
+
+
+        <div class="brand-name">
+
+            <b>
+                Yashashvini<span>!</span>
+            </b>
+
+            <small>
+                ELECTRONIC STORE
+            </small>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="products.html">
+            PRODUCTS
+        </a>
+
+        <a href="offers.html">
+            OFFER
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+        <a href="login.html">
+            LOGIN
+        </a>
+
+    </nav>
+
+
+
+    <!-- HEADER ICON -->
+
+    <div class="header-icons">
+
+        <span>
+            ⌕
+        </span>
+
+
+        <a
+            href="cart.html"
+            style="
+                text-decoration:none;
+                color:inherit;
+                position:relative;
+            "
+        >
+
+            🛒
+
+
+            <span
+                id="cart-count"
+                style="
+                    position:absolute;
+                    top:-10px;
+                    right:-10px;
+                    background:#9345e9;
+                    color:white;
+                    width:18px;
+                    height:18px;
+                    border-radius:50%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    font-size:10px;
+                    font-weight:bold;
+                "
+            >
+                0
+            </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     CART PAGE
+     ========================================= -->
+
+<main class="cart-page">
+
+
+    <!-- CART HEADING -->
+
+    <section class="cart-heading">
+
+        <div class="section-label">
+            YOUR SHOPPING BAG
+        </div>
+
+
+        <h1>
+            Your <span>Cart</span>
+        </h1>
+
+
+        <p>
+            Review your selected electronic products.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         CART CONTAINER
+         ========================================= -->
+
+    <section class="cart-container">
+
+
+        <!-- =====================================
+             CART ITEMS
+             ===================================== -->
+
+        <div class="cart-items">
+
+            <div id="cart-items">
+
+                <!-- Products will appear here
+                     automatically using JavaScript -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             CART SUMMARY
+             ===================================== -->
+
+        <div class="cart-summary">
+
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            <!-- SUBTOTAL -->
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <span id="cart-subtotal">
+                    ₹0
+                </span>
+
+            </div>
+
+
+
+            <!-- DELIVERY -->
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <span>
+                    FREE
+                </span>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-row total">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="cart-total">
+                    ₹0
+                </span>
+
+            </div>
+
+
+
+            <!-- CHECKOUT -->
+
+            <button
+                class="checkout-btn"
+                onclick="checkout()"
+            >
+                PROCEED TO CHECKOUT
+            </button>
+
+
+
+            <!-- CLEAR CART -->
+
+            <button
+                class="clear-cart"
+                onclick="clearCart()"
+            >
+                CLEAR CART
+            </button>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     CART MESSAGE
+     ========================================= -->
+
+<div class="cart-message">
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
