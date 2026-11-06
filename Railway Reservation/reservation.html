@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reservation | Yashashvini Railway</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ================= RESERVATION PAGE ================= */
+
+        .reservation-page .reservation-section {
+            padding: 45px 20px;
+        }
+
+        .reservation-page .reservation-container {
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .reservation-page .reservation-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .reservation-page .reservation-heading .section-label {
+            margin-bottom: 8px;
+        }
+
+        .reservation-page .reservation-heading h2 {
+            margin: 0 0 12px;
+        }
+
+        .reservation-page .reservation-heading p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        /* Reservation Form */
+
+        .reservation-page .reservation-form {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        .reservation-page .form-group {
+            margin-bottom: 18px;
+        }
+
+        .reservation-page label {
+            display: block;
+            font-weight: bold;
+            color: #163b68;
+            margin-bottom: 7px;
+        }
+
+        .reservation-page input,
+        .reservation-page select {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .reservation-page input:focus,
+        .reservation-page select:focus {
+            outline: none;
+            border-color: #163b68;
+        }
+
+        /* Two Column Row */
+
+        .reservation-page .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .reservation-page .row .form-group {
+            width: 50%;
+        }
+
+        /* Reserve Button */
+
+        .reservation-page .reserve-btn {
+            width: 100%;
+            padding: 13px;
+            background-color: #163b68;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .reservation-page .reserve-btn:hover {
+            background-color: #0b1f3a;
+        }
+
+        /* Bottom Information */
+
+        .reservation-page .reservation-info {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .reservation-page .reservation-info p {
+            line-height: 1.7;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .reservation-page .reservation-section {
+                padding: 30px 15px;
+            }
+
+            .reservation-page .reservation-form {
+                padding: 22px;
+            }
+
+            .reservation-page .row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .reservation-page .row .form-group {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body class="reservation-page">
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <span class="logo-icon">🚆</span>
+
+            <div>
+
+                <h2>YASHASHVINI</h2>
+
+                <small>Railway Reservation</small>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="trains.html">
+                Trains
+            </a>
+
+            <a href="reservation.html" class="active">
+                Reservation
+            </a>
+
+            <a href="stations.html">
+                Stations
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= PAGE BANNER ================= -->
+
+    <section class="page-banner">
+
+        <div class="page-banner-content">
+
+            <p>RESERVATION</p>
+
+            <h1>
+                Yashashvini
+            </h1>
+
+            <h2>
+                Railway Reservation Information System
+            </h2>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= RESERVATION SECTION ================= -->
+
+    <section class="reservation-section">
+
+        <div class="reservation-container">
+
+
+            <!-- Heading -->
+
+            <div class="reservation-heading">
+
+                <h2>
+                    Reserve Your Train Ticket
+                </h2>
+
+                <p>
+                    Enter your journey and passenger details to
+                    make a railway reservation.
+                </p>
+
+            </div>
+
+
+
+            <!-- ================= FORM ================= -->
+
+            <form class="reservation-form">
+
+
+                <!-- Passenger Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Passenger Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter passenger name"
+                        required>
+
+                </div>
+
+
+
+                <!-- From and To -->
+
+                <div class="row">
+
+                    <div class="form-group">
+
+                        <label for="from">
+                            From
+                        </label>
+
+                        <input
+                            type="text"
+                            id="from"
+                            name="from"
+                            placeholder="Enter boarding station"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="to">
+                            To
+                        </label>
+
+                        <input
+                            type="text"
+                            id="to"
+                            name="to"
+                            placeholder="Enter destination station"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Date and Class -->
+
+                <div class="row">
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Journey Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="class">
+                            Class
+                        </label>
+
+                        <select id="class" name="class" required>
+
+                            <option value="">
+                                Select Class
+                            </option>
+
+                            <option value="Sleeper">
+                                Sleeper (SL)
+                            </option>
+
+                            <option value="AC3">
+                                AC 3 Tier (3A)
+                            </option>
+
+                            <option value="AC2">
+                                AC 2 Tier (2A)
+                            </option>
+
+                            <option value="AC1">
+                                First AC (1A)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Number of Passengers -->
+
+                <div class="form-group">
+
+                    <label for="passengers">
+                        Number of Passengers
+                    </label>
+
+                    <select
+                        id="passengers"
+                        name="passengers"
+                        required>
+
+                        <option value="">
+                            Select Number
+                        </option>
+
+                        <option value="1">
+                            1 Passenger
+                        </option>
+
+                        <option value="2">
+                            2 Passengers
+                        </option>
+
+                        <option value="3">
+                            3 Passengers
+                        </option>
+
+                        <option value="4">
+                            4 Passengers
+                        </option>
+
+                        <option value="5">
+                            5 Passengers
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter email address"
+                        required>
+
+                </div>
+
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter mobile number"
+                        required>
+
+                </div>
+
+
+
+                <!-- Button -->
+
+                <button
+                    type="submit"
+                    class="reserve-btn">
+
+                    Reserve Ticket
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <!-- Footer content removed as requested -->
+
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

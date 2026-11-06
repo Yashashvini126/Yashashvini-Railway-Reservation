@@ -1,0 +1,166 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Management</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 25px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: white;
+    text-align: center;
+    padding: 18px 10px;
+    box-shadow: 0 3px 10px #00000015;
+}
+
+nav a {
+    display: inline-block;
+    color: #5b21b6;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #6a11cb;
+    color: white;
+}
+
+.container {
+    width: 85%;
+    max-width: 800px;
+    margin: 45px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px #3b1b7025;
+}
+
+h2 {
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+button {
+    width: 80%;
+    max-width: 450px;
+    padding: 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px #6a11cb45;
+}
+
+footer {
+    text-align: center;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>STUDENT MANAGEMENT</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="list.html">List Students</a>
+    <a href="listOne.html">List Required Student</a>
+    <a href="insert.html">Insert Student</a>
+    <a href="update.html">Update Student</a>
+    <a href="delete.html">Delete Student</a>
+</nav>
+
+<div class="container">
+
+    <h2>Welcome to Student Management</h2>
+
+    <p>Manage student records easily in one place.</p>
+
+    <button onclick="location.href='list.html'">
+        1. List Students
+    </button>
+    <br>
+
+    <button onclick="location.href='listOne.html'">
+        2. List Required Student
+    </button>
+    <br>
+
+    <button onclick="location.href='insert.html'">
+        3. Insert Student
+    </button>
+    <br>
+
+    <button onclick="location.href='update.html'">
+        4. Update Student
+    </button>
+    <br>
+
+    <button onclick="location.href='delete.html'">
+        5. Delete Student
+    </button>
+
+</div>
+
+<footer>
+    Student Management System | All Rights Reserved
+</footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,354 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Student</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+            margin: 0;
+        }
+
+        h1 {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        nav {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 12px;
+            color: #333366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            background: white;
+            margin: 40px auto;
+            padding: 30px;
+            width: 90%;
+            border-radius: 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #5b4b9a;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            box-sizing: border-box;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        button {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            color: white;
+        }
+
+        #result {
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .student-number-box {
+            position: relative;
+            width: 100%;
+        }
+
+        .student-number-box input {
+            padding-right: 45px;
+        }
+
+        .dropdown-arrow {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #333366;
+            font-size: 16px;
+            user-select: none;
+        }
+
+        .student-list {
+            display: none;
+            position: absolute;
+            top: calc(100% - 10px);
+            left: 0;
+            width: 100%;
+            background: white;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            max-height: 180px;
+            overflow-y: auto;
+            z-index: 10;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .student-list div {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .student-list div:hover {
+            background: #e0c3fc;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 550px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SEARCH STUDENT</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="list.html">List Students</a>
+        <a href="listOne.html">List Required Student</a>
+        <a href="insert.html">Insert Student</a>
+        <a href="update.html">Update Student</a>
+        <a href="delete.html">Delete Student</a>
+    </nav>
+
+    <div class="container">
+        <h2>Find Student Details</h2>
+
+        <label for="sno">Student Number</label>
+
+        <div class="student-number-box">
+            <input type="text" id="sno"
+                   placeholder="Enter student number"
+                   autocomplete="off">
+
+            <span class="dropdown-arrow"
+                  onclick="toggleStudentList(event)">▼</span>
+
+            <div id="studentList" class="student-list"></div>
+        </div>
+
+        <button onclick="searchStudent()">Search Student</button>
+
+        <p id="result"></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Number</th>
+                    <th>Name</th>
+                    <th>Total</th>
+                    <th>Age</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentData">
+                <!-- Student details appear here after searching -->
+            </tbody>
+        </table>
+
+        <br>
+        <button onclick="location.href='index.html'">
+            Home Page
+        </button>
+    </div>
+
+    <script>
+        let studentNumbers = [];
+        let listLoaded = false;
+
+        async function loadStudentNumbers() {
+            try {
+                let response = await fetch("/students");
+
+                if (!response.ok) {
+                    return;
+                }
+
+                let students = await response.json();
+
+                studentNumbers = students.map(student =>
+                    String(student.student_id)
+                );
+
+                listLoaded = true;
+
+            } catch (error) {
+                console.log("Unable to load student numbers.");
+            }
+        }
+
+        loadStudentNumbers();
+
+        async function toggleStudentList(event) {
+            event.stopPropagation();
+
+            let list = document.getElementById("studentList");
+
+            if (list.style.display === "block") {
+                list.style.display = "none";
+                return;
+            }
+
+            if (!listLoaded) {
+                await loadStudentNumbers();
+            }
+
+            list.innerHTML = "";
+
+            if (studentNumbers.length === 0) {
+                let item = document.createElement("div");
+                item.textContent = "No student numbers found";
+                list.appendChild(item);
+            } else {
+                studentNumbers.forEach(number => {
+                    let item = document.createElement("div");
+                    item.textContent = number;
+
+                    item.onclick = function () {
+                        document.getElementById("sno").value = number;
+                        list.style.display = "none";
+                    };
+
+                    list.appendChild(item);
+                });
+            }
+
+            list.style.display = "block";
+        }
+
+        document.addEventListener("click", function (event) {
+            let box = document.querySelector(".student-number-box");
+
+            if (!box.contains(event.target)) {
+                document.getElementById("studentList").style.display = "none";
+            }
+        });
+
+        document.getElementById("sno").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("studentList").style.display = "none";
+                searchStudent();
+            }
+        });
+
+        async function searchStudent() {
+            let sno = document.getElementById("sno").value.trim();
+            let result = document.getElementById("result");
+            let studentData = document.getElementById("studentData");
+
+            studentData.innerHTML = "";
+            result.innerHTML = "";
+
+            if (sno === "") {
+                result.innerHTML = "Please enter a student number.";
+                return;
+            }
+
+            try {
+                let response = await fetch("/students/" + encodeURIComponent(sno));
+
+                if (!response.ok) {
+                    result.innerHTML = "Student not found.";
+                    return;
+                }
+
+                let data = await response.json();
+
+                // Supports an API response containing an array
+                let student = Array.isArray(data) ? data[0] : data;
+
+                if (!student || student.student_id == null) {
+                    result.innerHTML = "Student not found.";
+                    return;
+                }
+
+                studentData.innerHTML = `
+                    <tr>
+                        <td>${student.student_id}</td>
+                        <td>${student.student_name}</td>
+                        <td>${student.total}</td>
+                        <td>${student.age}</td>
+                        <td>${student.phonenumber}</td>
+                    </tr>
+                `;
+
+            } catch (error) {
+                result.innerHTML =
+                    "Unable to get student details. Check the server.";
+            }
+        }
+    </script>
+
+</body>
+</html>
+```

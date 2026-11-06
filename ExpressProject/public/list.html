@@ -1,0 +1,201 @@
+<!-- To list all students data -->
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>List Students</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 25px;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+nav {
+    background: white;
+    text-align: center;
+    padding: 18px 10px;
+    box-shadow: 0 3px 10px #00000015;
+}
+
+nav a {
+    display: inline-block;
+    color: #5b21b6;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #6a11cb;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #3b1b7025;
+    text-align: center;
+}
+
+h2 {
+    color: #6a11cb;
+    margin-bottom: 25px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 25px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e5ddf5;
+    color: #444;
+}
+
+tr:nth-child(even) {
+    background: #f5f0ff;
+}
+
+tr:hover {
+    background: #e8e1ff;
+}
+
+button {
+    padding: 13px 25px;
+    margin: 8px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px #6a11cb45;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>LIST OF STUDENTS</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="list.html">List Students</a>
+    <a href="listOne.html">List Required Student</a>
+    <a href="insert.html">Insert Student</a>
+    <a href="update.html">Update Student</a>
+    <a href="delete.html">Delete Student</a>
+</nav>
+
+<div class="container">
+
+    <h2>Student Records</h2>
+
+    <button onclick="loadStudents()">Refresh List</button>
+
+    <div class="table-container">
+        <table border="1" id="studentTable">
+        </table>
+    </div>
+
+    <button onclick="location.href='index.html'">
+        Home Page
+    </button>
+
+</div>
+
+<script>
+loadStudents();
+
+function loadStudents() {
+    fetch("/students")
+    .then(response => response.json())
+    .then(data => {
+        let table = document.getElementById("studentTable");
+
+        table.innerHTML = `
+        <tr>
+            <th>Student Number</th>
+            <th>Name</th>
+            <th>Total</th>
+            <th>Age</th>
+            <th>Phone Number</th>
+        </tr>`;
+
+        data.forEach(student => {
+            table.innerHTML += `
+            <tr>
+                <td>${student.student_id}</td>
+                <td>${student.student_name}</td>
+                <td>${student.total}</td>
+                <td>${student.age}</td>
+                <td>${student.phonenumber}</td>
+            </tr>`;
+        });
+    })
+    .catch(error => {
+        alert("Unable to load student records.");
+        console.error(error);
+    });
+}
+</script>
+
+</body>
+</html>
+```
