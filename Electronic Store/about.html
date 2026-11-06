@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Electronic Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ===============================
+           ABOUT PAGE
+           =============================== */
+
+        .about-page {
+            background:
+                radial-gradient(circle at 10% 10%, #9345e918, transparent 25%),
+                radial-gradient(circle at 90% 50%, #9345e910, transparent 25%),
+                #f7f5fa;
+
+            min-height: calc(100vh - 80px);
+            padding: 35px 5% 50px;
+        }
+
+
+        /* ===============================
+           HERO
+           =============================== */
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .about-label {
+            color: #9345e9;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 7px;
+        }
+
+        .about-hero h1 {
+            color: #181827;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .about-hero h1 span {
+            color: #9345e9;
+        }
+
+        .about-hero p {
+            color: #777;
+            font-size: 12px;
+            margin: 10px auto 0;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+
+        /* ===============================
+           ELECTRONIC ICONS
+           =============================== */
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px 0 28px;
+        }
+
+        .tech-icons span {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: white;
+            border-radius: 12px;
+
+            box-shadow: 0 7px 20px #35205a15;
+
+            font-size: 18px;
+
+            transition: 0.3s;
+        }
+
+        .tech-icons span:hover {
+            transform: translateY(-5px);
+            background: #9345e9;
+        }
+
+
+        /* ===============================
+           ABOUT CARD
+           =============================== */
+
+        .about-card {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+
+            box-shadow: 0 15px 45px #35205a18;
+
+            margin-bottom: 28px;
+        }
+
+
+        .about-left {
+            min-height: 250px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #141426,
+                    #301747,
+                    #572477
+                );
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+        }
+
+
+        .store-icon {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #9345e9;
+
+            font-size: 32px;
+
+            box-shadow: 0 12px 30px #9345e960;
+        }
+
+
+        .about-left h2 {
+            margin: 15px 0 3px;
+            font-size: 25px;
+        }
+
+
+        .about-left h2 span {
+            color: #c58cff;
+        }
+
+
+        .about-left small {
+            color: #cfc7d8;
+            letter-spacing: 3px;
+            font-size: 8px;
+        }
+
+
+        .about-right {
+            padding: 35px 40px;
+        }
+
+
+        .about-right .small-title {
+            color: #9345e9;
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+
+        .about-right h2 {
+            color: #1b1a2a;
+            font-size: 27px;
+            margin: 8px 0 12px;
+        }
+
+
+        .about-right h2 span {
+            color: #9345e9;
+        }
+
+
+        .about-right p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+            margin: 7px 0;
+        }
+
+
+        /* ===============================
+           STATS
+           =============================== */
+
+        .stats {
+            max-width: 900px;
+            margin: 0 auto 30px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+
+        .stat {
+            background: white;
+
+            border-radius: 15px;
+
+            padding: 16px;
+
+            text-align: center;
+
+            box-shadow: 0 7px 25px #35205a12;
+        }
+
+
+        .stat-number {
+            color: #9345e9;
+
+            font-size: 24px;
+
+            font-weight: bold;
+        }
+
+
+        .stat p {
+            color: #777;
+
+            font-size: 9px;
+
+            letter-spacing: 1px;
+
+            margin: 3px 0 0;
+        }
+
+
+        /* ===============================
+           SECTION TITLE
+           =============================== */
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+
+        .section-title h2 {
+            color: #19182a;
+            font-size: 27px;
+            margin: 0 0 5px;
+        }
+
+
+        .section-title p {
+            color: #888;
+            font-size: 10px;
+            margin: 0;
+        }
+
+
+        /* ===============================
+           WHY CHOOSE US
+           =============================== */
+
+        .why-section {
+            max-width: 1000px;
+            margin: 0 auto 35px;
+        }
+
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+
+        .why-card {
+            background: white;
+
+            padding: 20px 15px;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+            box-shadow: 0 7px 25px #35205a12;
+
+            transition: 0.3s;
+        }
+
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .why-icon {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 12px;
+
+            margin: 0 auto 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #9345e912;
+
+            font-size: 19px;
+        }
+
+
+        .why-card h3 {
+            color: #29273a;
+            font-size: 13px;
+            margin: 0 0 5px;
+        }
+
+
+        .why-card p {
+            color: #888;
+            font-size: 9px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+
+        /* ===============================
+           TEAM
+           =============================== */
+
+        .team-section {
+            max-width: 1000px;
+            margin: 0 auto 35px;
+        }
+
+
+        .team-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+
+        .team-card {
+            background: white;
+
+            border-radius: 17px;
+
+            padding: 13px 10px 17px;
+
+            text-align: center;
+
+            box-shadow: 0 7px 25px #35205a12;
+
+            border: 1px solid #eeeaf3;
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px #35205a20;
+        }
+
+
+        .team-card.leader {
+            border: 2px solid #9345e9;
+        }
+
+
+        .leader-badge {
+            position: absolute;
+
+            top: 8px;
+            right: 7px;
+
+            background: #9345e9;
+
+            color: white;
+
+            padding: 4px 7px;
+
+            border-radius: 15px;
+
+            font-size: 6px;
+
+            font-weight: bold;
+        }
+
+
+        .team-photo {
+            width: 105px;
+            height: 105px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            margin: 5px auto 10px;
+
+            border: 4px solid #f0e7fa;
+
+            background: #eee;
+        }
+
+
+        .team-card.leader .team-photo {
+            border-color: #9345e970;
+        }
+
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .team-card h3 {
+            color: #252438;
+
+            font-size: 12px;
+
+            margin: 0 0 4px;
+        }
+
+
+        .team-role {
+            color: #9345e9;
+
+            font-size: 8px;
+
+            font-weight: bold;
+
+            margin: 0;
+        }
+
+
+        /* ===============================
+           JOURNEY
+           =============================== */
+
+        .journey {
+            max-width: 900px;
+            margin: 0 auto 35px;
+        }
+
+
+        .journey-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .journey-card {
+            background: white;
+
+            border-radius: 14px;
+
+            padding: 17px 10px;
+
+            text-align: center;
+
+            box-shadow: 0 7px 23px #35205a12;
+        }
+
+
+        .journey-number {
+            width: 28px;
+            height: 28px;
+
+            background: #9345e9;
+
+            color: white;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: auto auto 8px;
+
+            font-size: 8px;
+
+            font-weight: bold;
+        }
+
+
+        .journey-card h3 {
+            color: #29273a;
+
+            font-size: 11px;
+
+            margin: 0 0 4px;
+        }
+
+
+        .journey-card p {
+            color: #888;
+
+            font-size: 8px;
+
+            line-height: 1.5;
+
+            margin: 0;
+        }
+
+
+        /* ===============================
+           MISSION
+           =============================== */
+
+        .mission {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 28px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #181225,
+                    #542276
+                );
+
+            color: white;
+
+            box-shadow: 0 15px 40px #35205a22;
+        }
+
+
+        .mission small {
+            color: #c58cff;
+
+            font-size: 8px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+        }
+
+
+        .mission h2 {
+            font-size: 24px;
+
+            margin: 8px 0;
+        }
+
+
+        .mission p {
+            color: #d1c9d8;
+
+            font-size: 10px;
+
+            max-width: 600px;
+
+            margin: auto;
+
+            line-height: 1.6;
+        }
+
+
+        /* ===============================
+           RESPONSIVE
+           =============================== */
+
+        @media (max-width: 900px) {
+
+            .about-card {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .journey-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .about-page {
+                padding: 30px 18px 40px;
+            }
+
+            .about-hero h1 {
+                font-size: 32px;
+            }
+
+            .stats,
+            .why-grid,
+            .team-grid,
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-right {
+                padding: 28px 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===============================
+     HEADER
+     =============================== -->
+
+<header class="site-header">
+
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ⚡
+        </div>
+
+
+        <div class="brand-name">
+
+            <b>
+                Yashashvini<span>!</span>
+            </b>
+
+            <small>
+                ELECTRONIC STORE
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html" class="active">
+            ABOUT
+        </a>
+
+        <a href="products.html">
+            PRODUCTS
+        </a>
+
+        <a href="offers.html">
+            OFFER
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+        <a href="login.html">
+            LOGIN
+        </a>
+
+    </nav>
+
+
+    <div class="header-icons">
+
+        <span>⌕</span>
+        <span>🛒</span>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- ===============================
+     ABOUT PAGE
+     =============================== -->
+
+<main class="about-page">
+
+
+    <!-- HERO -->
+
+    <section class="about-hero">
+
+        <div class="about-label">
+            ✦ DISCOVER OUR STORY ✦
+        </div>
+
+
+        <h1>
+            About
+            <span>Electronic Store</span>
+        </h1>
+
+
+        <p>
+
+            Technology, creativity and innovation
+            come together to create a simple and
+            modern electronic shopping experience.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- ELECTRONIC ICONS -->
+
+    <div class="tech-icons">
+
+        <span>📱</span>
+        <span>💻</span>
+        <span>⌚</span>
+        <span>🎧</span>
+        <span>📷</span>
+        <span>📺</span>
+
+    </div>
+
+
+
+    <!-- ABOUT CARD -->
+
+    <section class="about-card">
+
+
+        <div class="about-left">
+
+            <div class="store-icon">
+                ⚡
+            </div>
+
+
+            <h2>
+                Yashashvini<span>!</span>
+            </h2>
+
+
+            <small>
+                ELECTRONIC STORE
+            </small>
+
+        </div>
+
+
+
+        <div class="about-right">
+
+            <div class="small-title">
+                WHO WE ARE
+            </div>
+
+
+            <h2>
+                Technology Made
+                <span>Simple.</span>
+            </h2>
+
+
+            <p>
+
+                Yashashvini Electronic Store is
+                a creative electronic shopping
+                website designed to bring modern
+                technology into one place.
+
+            </p>
+
+
+            <p>
+
+                Explore smartphones, laptops,
+                TVs, audio devices, wearables
+                and cameras through a simple
+                and attractive interface.
+
+            </p>
+
+
+            <p>
+
+                Our focus is clean design,
+                easy navigation and a
+                user-friendly experience.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                07
+            </div>
+
+            <p>
+                TEAM MEMBERS
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                06
+            </div>
+
+            <p>
+                PRODUCT CATEGORIES
+            </p>
+
+        </div>
+
+
+        <div class="stat">
+
+            <div class="stat-number">
+                100%
+            </div>
+
+            <p>
+                PASSION
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- WHY CHOOSE US -->
+
+    <section class="why-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                Why Choose Us?
+            </h2>
+
+            <p>
+                What makes our store special
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Trusted
+                </h3>
+
+                <p>
+                    Simple and reliable
+                    shopping experience.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Modern
+                </h3>
+
+                <p>
+                    Discover today's
+                    popular technology.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-card">
+
+                <div class="why-icon">
+                    💜
+                </div>
+
+                <h3>
+                    Customer First
+                </h3>
+
+                <p>
+                    Designed around
+                    the user's needs.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- TEAM -->
+
+    <section class="team-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                Meet Our Team
+            </h2>
+
+            <p>
+                The creative minds behind our project
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <!-- 1. YASHASHVINI -->
+
+            <div class="team-card leader">
+
+                <div class="leader-badge">
+                    TEAM LEAD
+                </div>
+
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member1.jpg"
+                        alt="Yashashvini"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Yashashvini
+                </h3>
+
+
+                <p class="team-role">
+                    Team Leader
+                </p>
+
+            </div>
+
+
+
+            <!-- 2. ALFISHA -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member2.jpg"
+                        alt="Alfisha"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Alfisha
+                </h3>
+
+
+                <p class="team-role">
+                    Web Designer
+                </p>
+
+            </div>
+
+
+
+            <!-- 3. MAMATHA -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member3.jpg"
+                        alt="Mamatha"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Mamatha
+                </h3>
+
+
+                <p class="team-role">
+                    Frontend Developer
+                </p>
+
+            </div>
+
+
+
+            <!-- 4. ANUSHA -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member4.jpg"
+                        alt="Anusha"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Anusha
+                </h3>
+
+
+                <p class="team-role">
+                    UI/UX Designer
+                </p>
+
+            </div>
+
+
+
+            <!-- 5. YASHESWINI -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member5.jpg"
+                        alt="Yasheswini"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Yasheswini
+                </h3>
+
+
+                <p class="team-role">
+                    Developer
+                </p>
+
+            </div>
+
+
+
+            <!-- 6. VYSHNAVI -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member6.jpg"
+                        alt="Vyshnavi"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Vyshnavi
+                </h3>
+
+
+                <p class="team-role">
+                    Research & Content
+                </p>
+
+            </div>
+
+
+
+            <!-- 7. JHANSI -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+
+                    <img
+                        src="images/member7.jpg"
+                        alt="Jhansi"
+                    >
+
+                </div>
+
+
+                <h3>
+                    Jhansi
+                </h3>
+
+
+                <p class="team-role">
+                    Project Coordinator
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- OUR JOURNEY -->
+
+    <section class="journey">
+
+
+        <div class="section-title">
+
+            <h2>
+                Our Journey
+            </h2>
+
+            <p>
+                From an idea to a complete website
+            </p>
+
+        </div>
+
+
+        <div class="journey-grid">
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    01
+                </div>
+
+                <h3>
+                    IDEA
+                </h3>
+
+                <p>
+                    Started with a creative
+                    idea for an electronics store.
+                </p>
+
+            </div>
+
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    02
+                </div>
+
+                <h3>
+                    DESIGN
+                </h3>
+
+                <p>
+                    Planned a clean and
+                    attractive interface.
+                </p>
+
+            </div>
+
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    03
+                </div>
+
+                <h3>
+                    DEVELOP
+                </h3>
+
+                <p>
+                    Built the website using
+                    HTML, CSS and JavaScript.
+                </p>
+
+            </div>
+
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    04
+                </div>
+
+                <h3>
+                    LAUNCH
+                </h3>
+
+                <p>
+                    Combined everything into
+                    our Electronic Store.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- MISSION -->
+
+    <section class="mission">
+
+        <small>
+            ✦ OUR MISSION ✦
+        </small>
+
+
+        <h2>
+            Technology Should Be Simple.
+        </h2>
+
+
+        <p>
+
+            We aim to make modern electronics
+            easy to discover and explore through
+            a creative, simple and user-friendly
+            digital experience.
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

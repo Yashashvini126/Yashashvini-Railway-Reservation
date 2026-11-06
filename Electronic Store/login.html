@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Electronic Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+
+        /* =========================================
+           LOGIN PAGE
+           ========================================= */
+
+        .login-page {
+
+            min-height: calc(100vh - 80px);
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    #9345e930,
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 80%,
+                    #a24bea25,
+                    transparent 30%
+                ),
+                #f4f2f8;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 45px 20px 60px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* =========================================
+           BACKGROUND DECORATIONS
+           ========================================= */
+
+        .login-page::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 50%;
+
+            border: 1px solid #9345e925;
+
+            top: -180px;
+
+            left: -170px;
+
+        }
+
+
+        .login-page::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+
+            height: 500px;
+
+            border-radius: 50%;
+
+            border: 1px solid #9345e920;
+
+            bottom: -250px;
+
+            right: -200px;
+
+        }
+
+
+        /* =========================================
+           MAIN LOGIN BOX
+           ========================================= */
+
+        .creative-login {
+
+            width: 95%;
+
+            max-width: 1150px;
+
+            min-height: 650px;
+
+            display: grid;
+
+            grid-template-columns: 1.05fr 0.95fr;
+
+            background: white;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 70px #35205a25;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =========================================
+           LEFT PANEL
+           ========================================= */
+
+        .login-left {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111223,
+                    #281640,
+                    #47206c
+                );
+
+            color: white;
+
+            padding: 65px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            box-sizing: border-box;
+
+        }
+
+
+        .login-left::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: #a24bea18;
+
+            top: -150px;
+
+            right: -100px;
+
+        }
+
+
+        .login-left::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 220px;
+
+            height: 220px;
+
+            border-radius: 50%;
+
+            border: 1px solid #ffffff15;
+
+            bottom: -100px;
+
+            left: -70px;
+
+        }
+
+
+        /* =========================================
+           BRAND
+           ========================================= */
+
+        .login-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 35px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .login-brand-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 15px;
+
+            background: #9345e9;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 26px;
+
+            box-shadow:
+                0 12px 35px #9345e966;
+
+        }
+
+
+        .login-brand-text strong {
+
+            display: block;
+
+            font-size: 25px;
+
+        }
+
+
+        .login-brand-text strong span {
+
+            color: #c58cff;
+
+        }
+
+
+        .login-brand-text small {
+
+            color: #aaa4b8;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        /* =========================================
+           MAIN LEFT HEADING
+           ========================================= */
+
+        .login-left h1 {
+
+            font-size: 48px;
+
+            line-height: 1.08;
+
+            margin: 0 0 18px;
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 480px;
+
+        }
+
+
+        .login-left h1 span {
+
+            color: #c58cff;
+
+        }
+
+
+        .login-left > p {
+
+            color: #c9c4d2;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+
+            max-width: 440px;
+
+            margin: 0;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        /* =========================================
+           ELECTRONIC ICONS
+           ========================================= */
+
+        .tech-icons {
+
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 38px;
+
+            position: relative;
+
+            z-index: 3;
+
+        }
+
+
+        .tech-icon {
+
+            width: 47px;
+
+            height: 47px;
+
+            border-radius: 13px;
+
+            background: #ffffff10;
+
+            border: 1px solid #ffffff1c;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 20px;
+
+            transition: 0.25s;
+
+        }
+
+
+        .tech-icon:hover {
+
+            background: #9345e9;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 25px #9345e955;
+
+        }
+
+
+        /* =========================================
+           TAGLINE
+           ========================================= */
+
+        .tech-tagline {
+
+            margin-top: 35px;
+
+            color: #aaa5b5;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            position: relative;
+
+            z-index: 2;
+
+        }
+
+
+        .tech-tagline span {
+
+            color: #c58cff;
+
+        }
+
+
+        /* =========================================
+           RIGHT LOGIN AREA
+           ========================================= */
+
+        .login-right {
+
+            padding: 65px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            box-sizing: border-box;
+
+            background: white;
+
+        }
+
+
+        .login-label {
+
+            color: #9345e9;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .login-right h2 {
+
+            color: #17182b;
+
+            font-size: 36px;
+
+            margin: 0 0 8px;
+
+        }
+
+
+        .login-right > p {
+
+            color: #888;
+
+            font-size: 12px;
+
+            margin: 0 0 30px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================================
+           INPUT GROUP
+           ========================================= */
+
+        .login-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .login-group label {
+
+            display: block;
+
+            color: #3d3b45;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+            margin-bottom: 8px;
+
+            letter-spacing: 0.5px;
+
+        }
+
+
+        .login-input {
+
+            position: relative;
+
+        }
+
+
+        .input-icon {
+
+            position: absolute;
+
+            left: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #9345e9;
+
+            font-size: 16px;
+
+            z-index: 2;
+
+        }
+
+
+        .login-input input {
+
+            width: 100%;
+
+            height: 50px;
+
+            box-sizing: border-box;
+
+            border: 1px solid #e2dfe8;
+
+            border-radius: 10px;
+
+            background: #fafafd;
+
+            padding: 0 45px;
+
+            outline: none;
+
+            font-size: 12px;
+
+            transition: 0.2s;
+
+        }
+
+
+        .login-input input:focus {
+
+            border-color: #9345e9;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 4px #9345e915;
+
+        }
+
+
+        /* =========================================
+           PASSWORD EYE
+           ========================================= */
+
+        .eye-icon {
+
+            position: absolute;
+
+            right: 15px;
+
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            color: #999;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+        }
+
+
+        /* =========================================
+           REMEMBER + FORGOT
+           ========================================= */
+
+        .login-options {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin: 2px 0 25px;
+
+        }
+
+
+        .remember {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            color: #777;
+
+            font-size: 10px;
+
+            cursor: pointer;
+
+        }
+
+
+        .remember input {
+
+            accent-color: #9345e9;
+
+        }
+
+
+        .forgot {
+
+            color: #9345e9;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            font-weight: bold;
+
+        }
+
+
+        .forgot:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================================
+           LOGIN BUTTON
+           ========================================= */
+
+        .login-button {
+
+            width: 100%;
+
+            height: 52px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7934c9,
+                    #a24bea
+                );
+
+            color: white;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 0.5px;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+
+            box-shadow:
+                0 10px 25px #9345e940;
+
+        }
+
+
+        .login-button:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 14px 30px #9345e955;
+
+        }
+
+
+        /* =========================================
+           CREATE ACCOUNT
+           ========================================= */
+
+        .create-account {
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 11px;
+
+            margin-top: 24px;
+
+        }
+
+
+        .create-account a {
+
+            color: #9345e9;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+
+        .create-account a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =========================================
+           SECURITY
+           ========================================= */
+
+        .security-line {
+
+            text-align: center;
+
+            margin-top: 28px;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #eee;
+
+            color: #aaa;
+
+            font-size: 9px;
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 900px) {
+
+            .creative-login {
+
+                grid-template-columns: 1fr;
+
+                max-width: 600px;
+
+            }
+
+
+            .login-left {
+
+                padding: 45px;
+
+                min-height: 430px;
+
+            }
+
+
+            .login-right {
+
+                padding: 45px;
+
+            }
+
+
+            .login-left h1 {
+
+                font-size: 40px;
+
+            }
+
+        }
+
+
+        @media (max-width: 550px) {
+
+            .login-page {
+
+                padding: 25px 12px 40px;
+
+            }
+
+
+            .login-left,
+
+            .login-right {
+
+                padding: 30px 25px;
+
+            }
+
+
+            .login-left h1 {
+
+                font-size: 34px;
+
+            }
+
+
+            .login-right h2 {
+
+                font-size: 29px;
+
+            }
+
+
+            .tech-icons {
+
+                gap: 8px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="site-header">
+
+
+    <div class="brand">
+
+
+        <div class="brand-icon">
+            ⚡
+        </div>
+
+
+        <div class="brand-name">
+
+            <b>
+                Yashashvini<span>!</span>
+            </b>
+
+            <small>
+                ELECTRONIC STORE
+            </small>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+
+        <a href="index.html">
+            HOME
+        </a>
+
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+
+        <a href="products.html">
+            PRODUCTS
+        </a>
+
+
+        <a href="offers.html">
+            OFFER
+        </a>
+
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+
+        <a href="login.html"
+           class="active">
+            LOGIN
+        </a>
+
+
+    </nav>
+
+
+
+    <div class="header-icons">
+
+        <span>⌕</span>
+
+        <span>🛒</span>
+
+    </div>
+
+
+</header>
+
+
+
+<!-- =========================================
+     LOGIN PAGE
+     ========================================= -->
+
+<main class="login-page">
+
+
+    <section class="creative-login">
+
+
+        <!-- =====================================
+             LEFT SIDE
+             ===================================== -->
+
+        <div class="login-left">
+
+
+            <!-- BRAND -->
+
+            <div class="login-brand">
+
+
+                <div class="login-brand-icon">
+                    ⚡
+                </div>
+
+
+                <div class="login-brand-text">
+
+                    <strong>
+                        Yashashvini<span>!</span>
+                    </strong>
+
+                    <small>
+                        ELECTRONIC STORE
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- HEADING -->
+
+            <h1>
+
+                Electronics
+                <span>Made Simple.</span>
+
+            </h1>
+
+
+            <p>
+
+                Discover smart technology, explore
+                the latest electronics and enjoy
+                exciting offers — all in one place.
+
+            </p>
+
+
+
+            <!-- ELECTRONICS -->
+
+            <div class="tech-icons">
+
+
+                <div class="tech-icon">
+                    📱
+                </div>
+
+
+                <div class="tech-icon">
+                    💻
+                </div>
+
+
+                <div class="tech-icon">
+                    ⌚
+                </div>
+
+
+                <div class="tech-icon">
+                    🎧
+                </div>
+
+
+                <div class="tech-icon">
+                    📷
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TAGLINE -->
+
+            <div class="tech-tagline">
+
+                SMART
+
+                <span>•</span>
+
+                SIMPLE
+
+                <span>•</span>
+
+                FUTURE
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             RIGHT LOGIN AREA
+             ===================================== -->
+
+        <div class="login-right">
+
+
+            <div class="login-label">
+
+                MEMBER LOGIN
+
+            </div>
+
+
+            <h2>
+
+                Welcome Back
+
+            </h2>
+
+
+            <p>
+
+                Login to continue your shopping journey.
+
+            </p>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="login-group">
+
+
+                <label>
+                    EMAIL ADDRESS
+                </label>
+
+
+                <div class="login-input">
+
+
+                    <span class="input-icon">
+                        ✉
+                    </span>
+
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-group">
+
+
+                <label>
+                    PASSWORD
+                </label>
+
+
+                <div class="login-input">
+
+
+                    <span class="input-icon">
+                        🔒
+                    </span>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                    >
+
+
+                    <span
+                        class="eye-icon"
+                        onclick="togglePassword()"
+                    >
+                        👁
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- OPTIONS -->
+
+            <div class="login-options">
+
+
+                <label class="remember">
+
+
+                    <input type="checkbox">
+
+
+                    Remember me
+
+
+                </label>
+
+
+
+                <a href="#"
+                   class="forgot">
+
+                    Forgot Password?
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="button"
+                class="login-button"
+                onclick="loginMessage()"
+            >
+
+                LOGIN &nbsp; →
+
+            </button>
+
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <div class="create-account">
+
+                Don't have an account?
+
+                <a href="#">
+
+                    Create Account
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="security-line">
+
+                🔒 &nbsp;
+                Secure • Simple • Trusted
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT FILE
+     ========================================= -->
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>
