@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashashvini Lab Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Yashashvini Lab Management</h1>
+        <p>Laboratory Equipment and Records Management System</p>
+    </header>
+
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="equipment.html">Equipment</a>
+        <a href="users.html">Users</a>
+        <a href="issues.html">Issue Records</a>
+    </nav>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Welcome to Lab Management</h2>
+            <p>
+                Manage laboratory equipment, user details, and issue records
+                easily in one place.
+            </p>
+        </section>
+
+        <!-- Dashboard statistics -->
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+                <h3>Total Equipment</h3>
+                <p id="totalEquipment">Loading...</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Users</h3>
+                <p id="totalUsers">Loading...</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Issue Records</h3>
+                <p id="totalIssues">Loading...</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Available Equipment</h3>
+                <p id="availableEquipment">Loading...</p>
+            </div>
+
+        </section>
+
+        <!-- Main page cards -->
+        <section class="cards">
+
+            <div class="card">
+                <div class="card-icon">🖥️</div>
+                <h2>Equipment</h2>
+                <p>View laboratory equipment, quantities, and availability.</p>
+                <a href="equipment.html" class="btn">View Equipment</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h2>Users</h2>
+                <p>View laboratory user details, email addresses, and roles.</p>
+                <a href="users.html" class="btn">View Users</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h2>Issue Records</h2>
+                <p>View equipment issue details, return dates, and status.</p>
+                <a href="issues.html" class="btn">View Issue Records</a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Yashashvini Lab Management System</p>
+    </footer>
+
+    <script>
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/dashboard');
+
+                if (!response.ok) {
+                    throw new Error('Dashboard request failed');
+                }
+
+                const data = await response.json();
+
+                document.getElementById('totalEquipment').textContent =
+                    data.totalEquipment;
+
+                document.getElementById('totalUsers').textContent =
+                    data.totalUsers;
+
+                document.getElementById('totalIssues').textContent =
+                    data.totalIssues;
+
+                document.getElementById('availableEquipment').textContent =
+                    data.availableEquipment;
+
+            } catch (error) {
+                console.error(error);
+
+                document.querySelectorAll('.stat-card p').forEach(item => {
+                    item.textContent = 'Unavailable';
+                });
+            }
+        }
+
+        loadDashboard();
+    </script>
+
+</body>
+</html>

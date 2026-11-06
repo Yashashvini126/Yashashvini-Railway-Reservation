@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f3fa;
+    color: #29243b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background: linear-gradient(135deg, #35206b, #7650c8);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.main-header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.main-header p {
+    font-size: 16px;
+    color: #eee8ff;
+}
+
+/* Navigation */
+.navbar {
+    background: #281650;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: #7650c8;
+}
+
+/* Main content */
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 35px auto;
+    flex: 1;
+}
+
+.welcome {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.welcome h2 {
+    color: #493184;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: #625c70;
+    line-height: 1.7;
+}
+
+/* Dashboard statistics */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px 15px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 5px solid #7650c8;
+    box-shadow: 0 4px 14px rgba(45, 28, 85, 0.10);
+}
+
+.stat-card h3 {
+    color: #625c70;
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.stat-card p {
+    color: #51359b;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* Main page cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px 22px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(45, 28, 85, 0.10);
+    border-top: 5px solid #7650c8;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(45, 28, 85, 0.16);
+}
+
+.card-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    color: #493184;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #625c70;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 75px;
+    margin-bottom: 22px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #51359b, #7650c8);
+    color: white;
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #35206b;
+}
+
+/* Page headings */
+.container > h2 {
+    color: #493184;
+    margin-bottom: 22px;
+}
+
+/* Tables */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(45, 28, 85, 0.08);
+}
+
+.table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.table-wrapper th {
+    background: #51359b;
+    color: white;
+    white-space: nowrap;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+    border: 1px solid #e1ddec;
+    padding: 13px 15px;
+    text-align: left;
+}
+
+.table-wrapper tbody tr:nth-child(even) {
+    background: #f3f0fa;
+}
+
+.table-wrapper tbody tr:hover {
+    background: #eae3fb;
+}
+
+/* Footer */
+footer {
+    background: #281650;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* Mobile screens */
+@media (max-width: 850px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card p {
+        min-height: auto;
+    }
+
+    .main-header h1 {
+        font-size: 25px;
+    }
+
+    .container {
+        width: 94%;
+    }
+}
+
+@media (max-width: 400px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* Add, Edit and Delete controls */
+.crud-toolbar {
+    margin: 20px 0;
+}
+
+.crud-button,
+.edit-button,
+.delete-button,
+.cancel-button {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 3px;
+}
+
+.crud-button {
+    background: #673ab7;
+    color: white;
+}
+
+.edit-button {
+    background: #1976d2;
+    color: white;
+}
+
+.delete-button {
+    background: #d32f2f;
+    color: white;
+}
+
+.cancel-button {
+    background: #777;
+    color: white;
+}
+
+.crud-form {
+    background: #f7f4ff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.crud-form label {
+    display: block;
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+.crud-form input,
+.crud-form select {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    font: inherit;
+}
+
+.form-actions {
+    margin-top: 18px;
+}
+
+.action-cell {
+    white-space: nowrap;
+}
+
+.error-message {
+    color: #c62828;
+}
+
+@media (max-width: 600px) {
+    .crud-form {
+        padding: 14px;
+    }
+
+    .action-cell {
+        white-space: normal;
+    }
+}
